@@ -1,6 +1,6 @@
 module top(
-    input [1:0]sw,
-    output [1:0]led
+    input [9:0]sw,
+    output [13:0]led
 );
     half_sub half_sub1(
         .A(sw[0]),
@@ -17,7 +17,7 @@ module top(
     
     twos_compliment twos_compliment1(
 	   .A(sw[9:2]),
-	   .Y(sw[13:6])
+	   .Y(led[13:6])
 	);
     
 endmodule

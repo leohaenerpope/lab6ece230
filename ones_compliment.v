@@ -31,7 +31,6 @@ module ones_compliment(
         .Cin(carries[1]),
         .Cout(carries[2])
     );
-    
     full_adder fadd3(
         .A(A[3]),
         .B(~B[3]),
@@ -42,9 +41,9 @@ module ones_compliment(
     
     full_adder fadd_real_0(
         .A(AplusB[0]),
-        .B(1'b0),
+        .B(around),
         .Y(Y[0]),
-        .Cin(around),
+        .Cin(1'b0),
         .Cout(second_carries[0])
     );
     
@@ -69,8 +68,10 @@ module ones_compliment(
         .B(1'b0),
         .Y(Y[3]),
         .Cin(second_carries[2]),
-        .Cout(second_carries[3])
+        .Cout()
     );
+
+
     
     
     
